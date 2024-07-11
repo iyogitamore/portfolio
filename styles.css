@@ -1,0 +1,256 @@
+* {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+     scroll-behavior: smooth;
+ }
+ 
+ body {
+     font-family: 'Arial', sans-serif;
+     background-color: #f0f0f0;
+     line-height: 1.6;
+     transition: background-color 0.5s ease-in-out;
+ }
+ 
+ .container {
+     width: 90%;
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 20px;
+ }
+ 
+ header {
+     background-color: #333;
+     color: #fff;
+     padding: 20px 0;
+     text-align: center;
+     border-bottom: 5px solid #ff4a4a;
+     transition: background-color 0.5s ease-in-out, border-bottom-color 0.5s ease-in-out;
+ }
+ 
+ header h1 {
+     font-size: 2.5rem;
+     margin-bottom: 10px;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     animation: slideInFromLeft 1s ease-in-out;
+ }
+ 
+ header p {
+     font-size: 1rem;
+     margin-bottom: 20px;
+     animation: fadeIn 2s ease-in-out;
+ }
+ 
+ nav ul {
+     list-style-type: none;
+     padding: 0;
+     text-align: center;
+ }
+ 
+ nav ul li {
+     display: inline-block;
+     margin-right: 20px;
+     position: relative;
+ }
+ 
+ nav ul li a {
+     color: #fff;
+     text-decoration: none;
+     font-size: 1.2rem;
+     padding: 10px;
+     transition: color 0.3s ease;
+ }
+ 
+ nav ul li a::after {
+     content: '';
+     display: block;
+     width: 0;
+     height: 2px;
+     background: #ff4a4a;
+     transition: width 0.3s ease;
+     position: absolute;
+     bottom: 0;
+     left: 0;
+ }
+ 
+ nav ul li a:hover::after {
+     width: 100%;
+ }
+ 
+ main {
+     padding: 20px 0;
+ }
+ 
+ section {
+     margin-bottom: 30px;
+ }
+ 
+ section h2 {
+     font-size: 2rem;
+     margin-bottom: 20px;
+     color: #333;
+     position: relative;
+     display: inline-block;
+     animation: bounceIn 1s ease-in-out;
+ }
+ 
+ section h2::after {
+     content: '';
+     display: block;
+     width: 50px;
+     height: 3px;
+     background-color: #ff4a4a;
+     position: absolute;
+     bottom: -10px;
+     left: 0;
+     animation: growWidth 0.5s ease-in-out;
+ }
+ 
+ section p {
+     font-size: 1rem;
+     line-height: 1.8;
+     margin-bottom: 15px;
+     animation: fadeIn 1.5s ease-in-out;
+ }
+ 
+ ul {
+     list-style-type: none;
+     padding: 0;
+ }
+ 
+ ul li {
+     margin-bottom: 8px;
+     animation: fadeIn 1.5s ease-in-out;
+ }
+ 
+ table {
+     width: 100%;
+     border-collapse: collapse;
+     margin-top: 15px;
+     overflow: hidden;
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+     border-radius: 10px;
+     animation: fadeIn 1.5s ease-in-out;
+ }
+ 
+ table thead {
+     background-color: #333;
+     color: #fff;
+ }
+ 
+ table th,
+ table td {
+     padding: 12px 15px;
+     text-align: left;
+     border-bottom: 1px solid #ddd;
+     transition: background-color 0.3s ease;
+ }
+ 
+ table tbody tr:nth-child(even) {
+     background-color: #f2f2f2;
+ }
+ 
+ table tbody tr:hover {
+     background-color: #f0e68c;
+ }
+ 
+ footer {
+     background-color: #333;
+     color: #fff;
+     text-align: center;
+     padding: 20px 0;
+     transition: background-color 0.5s ease-in-out;
+ }
+ 
+ footer a {
+     color: #fff;
+     text-decoration: none;
+     margin-left: 10px;
+     transition: color 0.3s ease, transform 0.3s ease;
+ }
+ 
+ footer a:hover {
+     color: #ff4a4a;
+     transform: scale(1.1);
+ }
+ 
+ @media (max-width: 768px) {
+     nav ul {
+         text-align: center;
+     }
+ 
+     nav ul li {
+         display: block;
+         margin-bottom: 10px;
+     }
+ 
+     header h1 {
+         font-size: 2rem;
+     }
+ 
+     header p {
+         font-size: 0.9rem;
+     }
+ 
+     section h2::after {
+         width: 30px;
+     }
+ }
+ 
+ @keyframes slideInFromLeft {
+     0% {
+         opacity: 0;
+         transform: translateX(-100%);
+     }
+     100% {
+         opacity: 1;
+         transform: translateX(0);
+     }
+ }
+ 
+ @keyframes fadeIn {
+     0% {
+         opacity: 0;
+     }
+     100% {
+         opacity: 1;
+     }
+ }
+ 
+ @keyframes bounceIn {
+     0%, 20%, 40%, 60%, 80%, 100% {
+         transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+     }
+     0% {
+         opacity: 0;
+         transform: scale3d(0.3, 0.3, 0.3);
+     }
+     20% {
+         transform: scale3d(1.1, 1.1, 1.1);
+     }
+     40% {
+         transform: scale3d(0.9, 0.9, 0.9);
+     }
+     60% {
+         opacity: 1;
+         transform: scale3d(1.03, 1.03, 1.03);
+     }
+     80% {
+         transform: scale3d(0.97, 0.97, 0.97);
+     }
+     100% {
+         opacity: 1;
+         transform: scale3d(1, 1, 1);
+     }
+ }
+ 
+ @keyframes growWidth {
+     0% {
+         width: 0;
+     }
+     100% {
+         width: 50px;
+     }
+ }
+ 
